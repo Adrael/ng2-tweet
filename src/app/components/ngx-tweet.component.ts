@@ -18,6 +18,7 @@ import { NgxTweetService } from '../services/ngx-tweet.service';
 })
 export class NgxTweetComponent implements OnInit {
     @Input() public tweetId: string;
+    @Input() public twitterConfig: any = {};
 
     public isTwitterScriptLoading: boolean = true;
 
@@ -35,7 +36,7 @@ export class NgxTweetComponent implements OnInit {
             .loadScript()
             .subscribe((twitterData: any) => {
                 this._updateTwitterScriptLoadingState();
-                twitterData.widgets.createTweet(this.tweetId, this._elementRef.nativeElement, {});
+                twitterData.widgets.createTweet(this.tweetId, this._elementRef.nativeElement, this.twitterConfig);
             });
     }
 

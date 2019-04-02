@@ -49,6 +49,27 @@ The `tweetId` is the number at the end of the tweet url that you want to embed, 
 
 And voila! Happy Tweeting!
 
+## Extra display parameters
+
+To pass in extra display parameters:
+
+```javascript
+<ngx-tweet tweetId="921670221710032896" [twitterConfig]="twitterConfig"></ngx-tweet>
+```
+
+And in your .ts file (for example)
+
+```javascript
+  public twitterConfig = {
+        theme: 'dark',
+        conversation: 'none',
+        cards: 'hidden',
+        width: '350px',
+  };
+```
+
+List of properties can be found `https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
